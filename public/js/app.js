@@ -2158,19 +2158,21 @@ __webpack_require__.r(__webpack_exports__);
     getUserList: function getUserList() {
       var _this = this;
 
-      axios.get('api/users').then(function (res) {
+      axios.get('/admin-user/api/users').then(function (res) {
         return res.data;
       })["catch"](function (error) {
         console.log(error);
       }).then(function (res) {
         _this.total = res.length;
-        _this.data = res;
-        alert(res);
+        _this.data = res; //alert(res.size);
       });
     },
     onPageChange: function onPageChange(page) {
       this.page = page;
       this.getStudentList();
+    },
+    functionClick: function functionClick() {
+      alert(this.selected.id);
     }
   } //methods
 
@@ -55400,7 +55402,7 @@ var render = function() {
         _c("div", { staticClass: "panel is-success" }, [
           _c("div", { staticClass: "panel-heading" }, [
             _vm._v(
-              "\n                    GADTC INVENTORY SYSTEM SECURITY CHECK\n                "
+              "\n                    INVENTORY SYSTEM SECURITY CHECK\n                "
             )
           ]),
           _vm._v(" "),
@@ -68101,8 +68103,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\eshen\Desktop\Github\GADTCInventory\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\eshen\Desktop\Github\GADTCInventory\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Wayne\Documents\GitHub\GADTCInventory\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Wayne\Documents\GitHub\GADTCInventory\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -7,7 +7,7 @@
 
                 <div class="panel is-success">
                     <div class="panel-heading">
-                        GADTC INVENTORY SYSTEM SECURITY CHECK
+                        INVENTORY SYSTEM SECURITY CHECK
                     </div>
 
                     <form id="checkForm" method="POST" action="/login">

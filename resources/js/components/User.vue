@@ -144,7 +144,7 @@ export default {
 
     methods:{
         getUserList(){
-            axios.get('api/users')
+            axios.get('/admin-user/api/users')
             .then(function(res){
                 return res.data;
             })
@@ -154,13 +154,16 @@ export default {
             .then(res=>{
                 this.total = res.length;
                 this.data = res;
-
-                 alert(res);
+                 //alert(res.size);
             })
         },
         onPageChange(page){
             this.page = page;
             this.getStudentList();
+        },
+
+        functionClick(){
+            alert(this.selected.id)
         },
 
 

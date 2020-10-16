@@ -27,14 +27,20 @@ Route::get('/admin-home', 'AdminHomeController@showForm');
 //Route::post('/checkpoint', 'CustomLoginController@authenticate');
 
 
+
 Auth::routes();
 
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/admin/create', 'Auth\RegisterController@addAdminAccount');
+
+
 
 Route::post('/register', 'Auth\RegisterController@showForm');
 Route::post('/register/create', 'Auth\RegisterController@create');
 
 
 Route::resource('admin-user', 'UserController');
-Route::get('/api/users', 'UserController@fetchData');
+Route::get('admin-user/api/users', 'UserController@fetchData');

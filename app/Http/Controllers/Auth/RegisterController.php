@@ -68,4 +68,18 @@ class RegisterController extends Controller
         ]);
 
     }
+
+    public function addAdminAccount(){
+        return User::create([
+            'username' => 'admin',
+            'lname' => 'AMPARADO',
+            'fname' => 'ETIENNE',
+            'mname' => 'N',
+            'role' => 'ADMINISTRATOR',
+            'office_id' => '1',
+            'email' => 'etiennewayne@gmail.com',
+            'password' => Hash::make('a'),
+        ]);
+
+    }
 }
