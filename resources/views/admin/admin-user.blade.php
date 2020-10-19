@@ -2,6 +2,6 @@
 
 @section('content')
 
-<user></user>
-    
+<user-create></user-create>
+
 @endsection

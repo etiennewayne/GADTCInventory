@@ -4,29 +4,13 @@
         <div class="container mt-5">
 
             <div class="columns">
-                <div class="column">
-                    <button class="button field is-danger" @click="selected = null"
-                        :disabled="!selected">
-                        <b-icon icon="close"></b-icon>
-                        <span>Clear selected</span>
-                    </button>
 
-                    <button class="button field is-success" @click="functionClick">
-                        <b-icon icon="mdi mdi-account"></b-icon>
-                        <span>New User</span>
-                    </button>
-
-                    <button class="button field is-warning" @click="functionClick">
-                        <b-icon icon="mdi mdi-account-edit"></b-icon>
-                        <span>Edit User</span>
-                    </button>
-                </div>
             </div>
 
             <div class="columns">
                 <div class="column">
                     <b-table :data="data" :columns="columns"
-                        :selected.sync="selected" 
+                        :selected.sync="selected"
                         focusable
                         :loading="loading"
                         :paginated="isPaginated"
@@ -45,46 +29,29 @@
             </div>
 
 
-            <div class="columns mt-2">
-                <div class="column">
-                    <pre>{{ selected }}</pre>
-                </div>
+            <div class="buttons is-right">
+                <button class="button field is-success" @click="btnNew">
+                    <b-icon icon="mdi mdi-account"></b-icon>
+                    <span>New User</span>
+                </button>
+
+                <button class="button field is-warning" @click="btnEdit">
+                    <b-icon icon="mdi mdi-account-edit"></b-icon>
+                    <span>Edit User</span>
+                </button>
+
+                <button class="button field is-danger" @click="selected = null"
+                        :disabled="!selected">
+                    <b-icon icon="close"></b-icon>
+                    <span>Clear selected</span>
+                </button>
             </div>
+
         </div>
 
-        <!-- <b-modal v-model="isCardModalActive" :width="640" scroll="keep">
-           <div class="card">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="/static/img/placeholder-1280x960.png" alt="Image">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="media">
-                        <div class="media-left">
-                            <figure class="image is-48x48">
-                                <img src="/static/img/placeholder-1280x960.png" alt="Image">
-                            </figure>
-                        </div>
-                        <div class="media-content">
-                            <p class="title is-4">John Smith</p>
-                            <p class="subtitle is-6">@johnsmith</p>
-                        </div>
-                    </div>
-
-                    <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                        <a>#css</a> <a>#responsive</a>
-                        <br>
-                        <small>11:09 PM - 1 Jan 2016</small>
-                    </div>
-                </div>
-            </div>
-        </b-modal> -->
 
 
-        
+
     </section><!--root section-->
 </template>
 
@@ -109,7 +76,7 @@ export default {
                     width: '40',
                     numeric: true,
                     sortable: true,
-                    
+
                 },
                 {
                     field: 'username',
@@ -162,8 +129,12 @@ export default {
             this.getStudentList();
         },
 
-        functionClick(){
-            alert(this.selected.id)
+        btnNew(){
+            window.location = '/admin-user/create';
+        },
+
+        btnEdit(){
+            window.location = '/admin-user/create';
         },
 
 

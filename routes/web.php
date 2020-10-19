@@ -42,5 +42,6 @@ Route::post('/register', 'Auth\RegisterController@showForm');
 Route::post('/register/create', 'Auth\RegisterController@create');
 
 
-Route::resource('admin-user', 'UserController');
-Route::get('admin-user/api/users', 'UserController@fetchData');
+Route::resource('/admin-user', 'UserController');
+Route::get('/admin-user/api/users', 'UserController@fetchData');
+Route::get('/admin-user/api/offices', 'UserController@offices');

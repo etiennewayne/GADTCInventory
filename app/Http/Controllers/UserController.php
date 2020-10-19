@@ -19,12 +19,16 @@ class UserController extends Controller
 
 
     public function create(){
-
+        return view('admin.admin-create');
     }
 
 
     public function fetchData(){
         return \DB::select('select * from users');
+    }
+
+    public function offices(){
+        return \DB::table('offices')->orderBy('office_code', 'asc')->get();
     }
 
 
